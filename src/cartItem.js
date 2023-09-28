@@ -9,9 +9,11 @@ class CartItem extends React.Component {
             quantity: 1,
             img: ''
         }
+        // this.increaseQuantity = this.increaseQuantity.bind(this);
+
     }
-    increaseQuantity () {
-        console.log('testing increase quantity')
+    increaseQuantity = () => {
+        console.log('this', this)
     }
     render() {
         const { price, title, quantity} = this.state;
