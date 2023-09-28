@@ -12,10 +12,33 @@ class CartItem extends React.Component {
         }
         // this.increaseQuantity = this.increaseQuantity.bind(this);
 
+        // this .testing();
     }
+
+    // testing (){
+    //     const promise = new Promise ((resolve, reject) => {
+    //         setTimeout (() => {
+    //             resolve('done');
+    //         },5000);
+    //     })
+
+    //     promise.then(() => {
+    //         this.setState({ quantity: this.state.quantity + 10 });
+    //         console.log('this', this.state);
+    //     });
+    // }
+
+    // Event handlers
     increaseQuantity = () => {
         // this.state.quantity += 1;
         console.log('this', this.state);
+
+        // added limitation of quantity 10
+        const { quantity} = this.state;
+
+        if(quantity == 10){
+            return ;
+        }
         // setState form one
         // this.setState({
         //     quantity : this.state.quantity + 1
@@ -23,8 +46,26 @@ class CartItem extends React.Component {
 
         // setState form two  - if previous state required Use this
         this.setState ((prevState) => {
+            
             return {
                 quantity : prevState.quantity + 1
+            }
+        })
+    }
+
+    // event handler
+    decreaseQuality = () => {
+        const{ quantity} = this.state;
+        
+        if(quantity == 0){
+            return ;
+        }
+
+        console.log('this', this.state);
+
+        this.setState ((prevState) => {
+            return {
+                quantity : prevState.quantity - 1
             }
         })
     }
@@ -52,6 +93,7 @@ class CartItem extends React.Component {
                             alt ="decrease" 
                             className="action-icons" 
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH8AAAB/CAMAAADxY+0hAAAAYFBMVEX///8AAABLS0vz8/PV1dWkpKTIyMi8vLzExMTn5+fZ2dl4eHhdXV1xcXGFhYX29vZGRkbf398iIiJlZWWVlZUVFRU3NzcuLi5/f3+Pj4+1tbVra2tRUVE8PDyurq7t7e231sYVAAADoElEQVRoge1b6ZLiIBCOm/s+jI5xdHz/t1yjNWsjEBro2FVb+X4DH6FPmk4QbNiwYcMGK4R5H0VZek6zKOrz8KPUUVxW3bB7YbhWZRx9ZBPFWO10qKZoXfKk0XL/oknWIs/jwcj+EEacr8Den3Dsjx2cemL2W4kmf6K+EbK3ZrHLaFoq+h8H9hk/JOz53pF+t9sTKGKKVzsZQ+pLr9W7yxjPrreYnXA8XnTDSi/2/Kpa89iksqtt00Y5+Oohg+hLXq8bC51it/3YyRO+nH1ycpAWq5Jlq2oTOTocHD1yIq1UF4hpRS3Nc9qARF9hnWovWazDBt7pj5nN5KPvBqI32Td2yUX45rEPlkqYi5p/ONtNv+MsfsCXnRmKpnx0seFclMHVZq7o9b4d2Gd8C6tYeMLUdeIbxM9Ax4JcCDknZ/ogOMGFBqwUBfP1CyDCCexxc4R0w1X2vxB0AJWQtILme9IHgWAFmJQMeo6DfwKTQz/QmMff4H7t3Y6MM1zQnBWXdttFAB6oUZt7KHyaC2UIVcAUQ6HFUt3kMrCmwZtA14M0VwRATmRwQrHFUeEBhRovjgSfX5PRBwFIyYalcTDpweR6WBRIrQKmUhHSCxqwZNQrKP8T8GD1o8AxdWS35wdacDHRC3Z8DRpJ6ZFLAylRF1DA0Wo1K3yNudIe/10AwAnr3HqEU1I3ANPS3QWA8/OuG0gAOa3OBYLQS19KBcLVBWGgfuT00LdoFDB82ehlBf5XiaZTny6IvdTWP2P6t7omBoMoqdOQrP5jQq27pwPtVjsXYH4a9ddX3iE04gUGoDZAwK/+BrmwooY6cwBZmJrfNCCSmTRQRhgQAtWfZzogfBFa6T2N4gUXBeUH4EvwSgcDIpD6WsP9/dzy59Z/bvtH+b+Lwf1d3P0f8P+TZg0fGP0/d/zjjv/s+Q93/sed/3Ln/1ABKW/fMzD3H/b7H/f9l/v+z17/4K7/cNe/2Ot/sP5JpwH4+qdQ/7V58VyCRf2Xvf7NXf9nf/8AeRr9+w8mr+R+/+J+/3t7//Rzgy7vn+zvv9zv3+zv/2v0P3R2k8n7Pyz7EZn7Xzz7fzLv/h+v/iepTkHTgPXZ/i/2/jf2/r+F/kfZmkJN/2Pn1wis7/+cQP/ntFL/Z8De/8re/xtw9z/f0U5mMgkT5Q3euv+9pOx/n8Hb/z+D9/+HBxKzIqz3/8cTi/+/jNRlMyXCQvn/T/HZn5D4/n/asGHDhv8BfwHbXS6mgzgdkQAAAABJRU5ErkJggg=="
+                            onClick={this.decreaseQuality}
                             />
                         <img 
                             alt ="delete" 
@@ -64,6 +106,7 @@ class CartItem extends React.Component {
         );
     }
 }
+
 const styles = {
 
     image: {
