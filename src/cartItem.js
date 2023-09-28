@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React from "react";
 
 class CartItem extends React.Component {
@@ -13,8 +14,21 @@ class CartItem extends React.Component {
 
     }
     increaseQuantity = () => {
-        console.log('this', this)
+        // this.state.quantity += 1;
+        console.log('this', this.state);
+        // setState form one
+        // this.setState({
+        //     quantity : this.state.quantity + 1
+        // });
+
+        // setState form two  - if previous state required Use this
+        this.setState ((prevState) => {
+            return {
+                quantity : prevState.quantity + 1
+            }
+        })
     }
+
     render() {
         const { price, title, quantity} = this.state;
         return (
