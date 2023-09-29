@@ -36,7 +36,7 @@ class CartItem extends React.Component {
         // added limitation of quantity 10
         const { quantity} = this.state;
 
-        if(quantity == 10){
+        if(quantity === 10){
             return ;
         }
         // setState form one
@@ -57,7 +57,7 @@ class CartItem extends React.Component {
     decreaseQuality = () => {
         const{ quantity} = this.state;
         
-        if(quantity == 0){
+        if(quantity === 1){
             return ;
         }
 
