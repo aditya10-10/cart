@@ -4,7 +4,12 @@ class CartItem extends React.Component {
   render () {
     console.log('this.props', this.props);
     const { price, title, qty } = this.props.product;
-    const {product, onIncreaseQuantity, onDecreaseQuantity} = this.props;
+    const {
+        product, 
+        onIncreaseQuantity, 
+        onDecreaseQuantity,
+        onDeleteProduct
+    } = this.props;
     return (
       <div className="cart-item">
         {this.props.jsx}
@@ -33,6 +38,7 @@ class CartItem extends React.Component {
                             alt ="delete" 
                             className="action-icons" 
                             src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAZlBMVEX///8AAAApKSnm5ub7+/sPDw/s7Oz09PQ7Ozv4+PhHR0ckJCTV1dXw8PDg4OAcHBzKysozMzN5eXlycnKWlpatra3Dw8O5ubmlpaWJiYlZWVmenp5eXl5CQkJRUVEuLi5oaGiBgYHnkf4kAAADFElEQVR4nO2caXOjMAyGCXcTAoQjQBJo+P9/creWc0GxZSpnprt6PxrVecaHZHukOo6RPvJqcDcKuUOV+2Z9GsmvY9XP3xQ31giiEwbgS1dLA+EpZ2AyEHsbBNEBT7DZ9DbG4Xrv3lXobjTSE6Sy60OTeAol9ac09MgRSui401sWYFlQE0QGwwu0wQcxQi663YUYWzlnCTFCK3otccYwDNQOqhO9VhaM0YI11uKMK+zK/W0I47sR/DB5VQq+sUtQgiEr00lziHbafl7GbjCRdHnT5u+1YOzGRY4iSAZMGFqrE8JbVDYBvnTWERS2CbROvrZPoHGb3sMOt/BM9OhaFWlkRA5aK+eu/Vk/FV4mLHpUPFwjDw5/7vJxpgHI1BbB3x0Pv7DsHqRXs0fgOHAPWA6iW/G9tokAW+6y+L3X7xkahGHx+xtGodWMwqj5TqBesxbkjjjaI2h0O8LbCYMMF1JX6AgEB4XjGW/uKw8tKL/FQNV5KtSGGBJFqpFq3kGgmefOPoH2fnHW9/EzIdxOerEJcMXd+dNRWAcxoQCgQwdh2Bhbb0+1HffS4+APInB+2xI+EESAgH95YQRG+BUI/ux+/k2LVYT6cpn41/OspT1NWygRRPx4uRmLe/jL24uIczMGMgTxwtw/RftIvPb2T4ahuC/1thB80fx8G9uLluzpBiqfPafrgREYgREYgREYgREYgREYgREYgREYgREYgREYgREYgREYgREYgREYgREYgRFWIzjxtDkSLcOs5TT9SzIEkX7WzFpekhPrWQspgpMX5SRB7VhMs/2P5ThPYvu3sjj+P4SdMjPSTLB7jRE2hLn5gLDD9wibm7ICDfJuB4OplfVBdAiQeGtSXAgFMweymQhhNSLLroTkYiCrghtXLC5ZuESUky0zsM0y3WUyckayInNZJmOY6A5FAmbTt6BbTvEsfGqU3gp8sipX1vOqleTdvSO8X5J6ygsPVFXNaj0qldbUGxDnZK8q/CCtJFtZ/ZKgy/x1uqzeWX6D+mcHOvXNjwrwk7b8DPS/sqTgUNa6EfgDdSJNf8JX2soAAAAASUVORK5CYII=" 
+                            onClick={() => onDeleteProduct(product.id)}
                             />
           </div>
         </div>
