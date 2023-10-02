@@ -28,6 +28,13 @@ constructor () {
           qty: 4,
           img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9vayUyMHByb3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80',
           id: 3
+        },
+        {
+          price: 5000,
+          title: 'TV',
+          qty: 3,
+          img: 'https://m.media-amazon.com/images/I/81+JXgPUDLL._AC_UF1000,1000_QL80_.jpg',
+          id: 4
         }
       ]
     }
