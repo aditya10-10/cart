@@ -23,7 +23,7 @@ constructor () {
           id: 2
         },
         {
-          price: 999,
+          price: 9999,
           title: 'Laptop',
           qty: 4,
           img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFjYm9vayUyMHByb3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80',
@@ -80,13 +80,13 @@ constructor () {
     return count;
   }
 
-  getTotalCount = () => {
+  getCartTotal = () => {
     const { products } = this.state;
 
     let cartTotal = 0;
 
     products.map((product) => {
-      cartTotal += cartTotal + product.price * product.qty;
+      cartTotal = cartTotal + product.qty * product.price
     })
 
     return cartTotal;
@@ -105,7 +105,7 @@ constructor () {
        onDeleteProduct={this.handleDeleteProduct}
        />
        <div style={{fontSize: 20, padding: 20}}>
-        TOTAL : {this.getTotalCount()}
+        TOTAL : {this.getCartTotal()}
        </div>
       </div>
     );
